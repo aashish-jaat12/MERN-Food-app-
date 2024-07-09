@@ -1,0 +1,29 @@
+.booder{
+    border: 1px solid #a9a9a9;
+}
+.text-heding{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(237, 139, 121);
+}
+.text-bdy img{
+    width: 5vw;
+   height: 4vw;
+}
+.text-bdy{
+   text-align: center;
+   text-align: center;
+}
+@media (max-width: 800px) { 
+
+    .text-heding{
+        font-size: 3vw;
+    }
+    .text-bdy{
+        font-size: 3vw;
+    }
+    .text-bdy img{
+        width: 30px;
+        height: 30px;
+    }
+ }

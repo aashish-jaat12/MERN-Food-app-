@@ -1,0 +1,22 @@
+.imge img{
+  height: 90vh;
+  border-radius: 50px;
+ 
+}
+.hader{
+margin: -5px 20px;
+}
+
+
+
+
+@media screen and (max-width: 580px) {
+  .h h5{ display: none;
+
+}
+.imge img{
+  height: 40vh;
+}
+.hader{
+  margin: -5px 10px;
+  }}
