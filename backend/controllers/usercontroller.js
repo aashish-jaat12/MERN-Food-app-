@@ -1,5 +1,5 @@
 import usermodel from "../models/usermodel.js";
-import bcrypt from 'bcrypt'
+import bcryptjs from  'bcryptjs'
 import jwt from 'jsonwebtoken'
 import validation from 'validator'
 
@@ -18,7 +18,7 @@ const login = async(req, res) => {
             if (!user) {
                 return res.json({success: false, message: 'User not Find' });
             }
-            const isMatch = await bcrypt.compare(password , user.password)
+            const isMatch = await bcryptjs.compare(password , user.password)
             
             if(!isMatch){
                 return res.json({success: false, message: 'Enter valid password' });
@@ -62,8 +62,8 @@ const Registration = async (req, res) => {
         return res.json({ success: false, message: 'Please enter a strong password' });
     }
 
-    const solt =await bcrypt.genSalt(10)
-  const hashpassword =await bcrypt.hash(password , solt)
+    const solt =await bcryptjs.genSalt(10)
+  const hashpassword =await bcryptjs.hash(password , solt)
     try {
         // Check for existing user
         let user = await usermodel.findOne({ email });
