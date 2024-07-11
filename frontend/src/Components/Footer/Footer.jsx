@@ -3,7 +3,7 @@ import { assets } from '../../assets/assets'
 
 function Footer() {
   return (<>
-    <div className='continear text-center my-5' id='mobileapp'>
+    <div className='continear text-center my-4' id='mobileapp'>
       <h1 className='my-4'>For Better Experience Download <br /> Tomato App</h1>
       <span  style={{ cursor: "pointer" }}> <img className='m-3 ' src={assets.app_store} alt="" />
         <img className='m-3 ' src={assets.play_store} alt="" />

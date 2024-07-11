@@ -20,7 +20,7 @@ function Navbar({ setLoginpap }) {
     <div className='sticky-top '>
       <nav className="navbar navbar-expand-lg navbar-light  bg-light ">
 
-        <div className="container-fluid  mx-5">
+        <div className="container-fluid navmarg ">
 
           <Link className="navbar-brand" to="/"><img src={assets.logo} style={{ width: "130px"}} alt='' /> </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

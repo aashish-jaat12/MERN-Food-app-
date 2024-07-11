@@ -6,7 +6,7 @@ function Card() {
   const { food_list, itemcart, removeitem , gettotalamount, url} = useContext(StoreContext)
   const navigat = useNavigate()
   return (
-    <div className='cards m-5'>
+    <div className='cards m-3 mx-md-5'>
       <div className='card-item'>
         <div className='all-card-title'>
           <p>Items</p>

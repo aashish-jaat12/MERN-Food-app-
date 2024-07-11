@@ -8,7 +8,7 @@ function FoodDisplay({category}) {
     const {food_list} = useContext(StoreContext)
    
   return (
-    <div className='mx-4'>
+    <div className='mx-md-4 mx-1'>
         <hr />
            <h2>Top dishes near you</h2>   
 

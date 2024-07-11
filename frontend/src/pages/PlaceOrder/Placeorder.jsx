@@ -68,7 +68,7 @@ setdata (data=>({...data, [name]:value}))
   }
   return (
     <>
-   <form onSubmit={placeorder} className='place-order m-5'>
+   <form onSubmit={placeorder} className='place-order m-3 m-md-5'>
     <div className='order-left'>
       <p className='title'>Delivery Information</p>
       <div className='multi-fields'>

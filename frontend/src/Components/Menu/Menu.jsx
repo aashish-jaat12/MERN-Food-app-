@@ -6,11 +6,11 @@ function Menu({setcategory, category}) {
   return (
    
     <>
-     <div className="menu contianer m-5" id='menu'>
+     <div className="menu contianer m-1" id='menu'>
       <hr />
     <h1 className="card-title mx-1">Explore our menu</h1>
     <h6 className="pera mx-3">Choose from a diverse menu featuring a delectable array of dishes. our mission is to satisfy your craving and elevate your dining experience....</h6>
-      <div className="row row-cols-2 card-group g-0 ">
+      <div className="row row-cols-3 card-group g-0 ">
        {menu_list.map((item,index)=>{ 
     return(
     <div onClick={()=>setcategory(prev=>prev===item.menu_name?"All":item.menu_name)} className="card  border-0" key={index}>

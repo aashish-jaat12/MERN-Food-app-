@@ -36,6 +36,7 @@ if(responce.data.success){
    }
     return (
         <div className='add'>
+            <h2>Add new product</h2>
             <form className="flex-cols">
                 <div className="add-img-upload flex-cols">
                     <p>Upload Image</p>
