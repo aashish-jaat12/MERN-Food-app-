@@ -1,10 +1,9 @@
 import React from 'react'
 import './Hader.css'
-import { assets } from '../../assets/assets'
-import { useNavigate } from 'react-router-dom'
+
 
 function Hader() {
-  const Navigat = useNavigate()
+ 
   return (
   <>
   
@@ -23,7 +22,7 @@ function Hader() {
       </div>
     <div className="carousel-item active imge" >
    
-      <img src={assets.header_img} className="d-block w-100" alt="..."  style={{
+      <img src='hader.png' className="d-block w-100" alt="header........."  style={{
  backgroundSize: "contain",
    position: 'relative',
    backgroundRepeat: "no-repeat",

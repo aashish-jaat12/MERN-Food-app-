@@ -12,7 +12,7 @@ import Stripe from 'stripe'
 const placeorder = async (req, res) => {
 
     const stripe = await Stripe(process.env.STRIE_KET)
-    const frontend_url = "http://localhost:5173";
+    const frontend_url = "https://mern-food-app-frontend-r0yy.onrender.com/";
     try {
         const neworder = new orderModel({
             userid: req.body.userid,

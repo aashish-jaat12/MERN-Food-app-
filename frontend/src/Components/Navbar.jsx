@@ -35,9 +35,7 @@ function Navbar({ setLoginpap }) {
               <li className="nav-item">
                 <a className="nav-link" href="#menu">menu</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#mobileapp">mobile-app</a>
-              </li>
+             
               <li className="nav-item">
                 <a className="nav-link" href="#contact-Us">contact us</a>
               </li>
