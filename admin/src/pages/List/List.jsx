@@ -3,6 +3,7 @@ import './List.css'
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
+import { url } from '../../assets/assets'
 
 function List() {
   const [list, setlist] = useState([])
@@ -10,7 +11,7 @@ function List() {
   const fetchlist = async () => {
 
 
-    const responce = await axios.get('http://localhost:3000/api/food/foodlist')
+    const responce = await axios.get(`${url}/api/food/foodlist`)
      
     if (responce.data.success) {
 
@@ -22,7 +23,7 @@ function List() {
 
 const removeitem = async (id)=>{
 
-  const remove = await axios.post(`http://localhost:3000/api/food/removefood`, {id})
+  const remove = await axios.post(`${url}/api/food/removefood`, {id})
  await fetchlist()
   if(remove.data.success){
     toast(remove.data.message)
@@ -58,7 +59,7 @@ const removeitem = async (id)=>{
               return ( 
               <tr key={index}>
                 
-                <td> <img  className=" rounded-circle"  src= {`http://localhost:3000/images/` + e.image }  alt="food.." /> </td>
+                <td> <img  className=" rounded-circle"  src= {`${url}/images/` + e.image }  alt="food.." /> </td>
                 <td>{e.name}</td>
                 <td>{e.category}</td>
                 <td>{e.price}</td>

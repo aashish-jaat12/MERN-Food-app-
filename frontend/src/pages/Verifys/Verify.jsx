@@ -1,12 +1,14 @@
-import React from 'react'
+
 import { useEffect } from 'react'
 import './Verifys.css'
 import {useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { StoreContext } from '../../Context/Storecontext'
 
 function Verify() {
- 
+ const {url} = useContext(StoreContext)
     const [searchParams, setsearchParams] = useSearchParams()
     const navigate = useNavigate()
 
@@ -14,7 +16,7 @@ function Verify() {
     const orderid = searchParams.get("orderid")
     const verifyorder= async()=>{
 
-      const responce = await axios.post("http://localhost:3000/api/order/verify",{success, orderid})
+      const responce = await axios.post(`${url}/api/order/verify`,{success, orderid})
 console.log(responce)
       if(responce.data.success){
         navigate('/myorder')

@@ -1,6 +1,6 @@
 // import React from 'react'
 import { useState } from 'react'
-import { assets } from '../../assets/assets'
+import { assets , url} from '../../assets/assets'
 import './Add.css'
 import axios from "axios"
 import { toast } from 'react-toastify'
@@ -20,7 +20,7 @@ formdata.append("category" , category)
 formdata.append("image" , image)
 formdata.append("price" , Number(price))
 
- const responce = await axios.post('http://localhost:3000/api/food/add', formdata)
+ const responce = await axios.post(`${url}/api/food/add`, formdata)
 if(responce.data.success){
     setname({name:""}),
     setdescription({description:""}),

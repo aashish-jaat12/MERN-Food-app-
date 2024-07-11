@@ -5,7 +5,7 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 
 function Placeorder() {
-  const {gettotalamount, token , food_list, itemcart,} = useContext(StoreContext)
+  const {gettotalamount, token , food_list, itemcart, url} = useContext(StoreContext)
 
   const Navigate =useNavigate()
 
@@ -41,7 +41,7 @@ const orderdata ={
 
 
 
-const responce = await axios.post('http://localhost:3000/api/order/placeOrder', orderdata , {headers: {token}})
+const responce = await axios.post(`${url}/api/order/placeOrder`, orderdata , {headers: {token}})
 if(responce){
   const {session_url} = responce.data;
  

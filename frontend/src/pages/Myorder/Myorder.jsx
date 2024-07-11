@@ -1,16 +1,16 @@
 import axios from 'axios'
 import './Myorder.css'
-import React, { useContext, useEffect, useState } from 'react'
+import  { useContext, useEffect, useState } from 'react'
 import { StoreContext } from '../../Context/Storecontext'
 import { assets } from '../../assets/assets'
 
 function Myorder() {
-    const { token } = useContext(StoreContext)
+    const { token, url } = useContext(StoreContext)
     const [myorder, setmyorder] = useState([])
 
     const myorders = async () => {
 
-        const responce = await axios.get('http://localhost:3000/api/order/userorder', { headers: { token } })
+        const responce = await axios.get(`${url}/api/order/userorder`, { headers: { token } })
         setmyorder(responce.data.data)
         console.log(responce.data.data)
 

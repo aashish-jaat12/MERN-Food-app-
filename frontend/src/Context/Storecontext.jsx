@@ -5,7 +5,7 @@ import axios from 'axios'
 export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
-
+const url= "https://mern-food-app-backend-ho47.onrender.com"
     const [itemcart, setitemcart] = useState({})
     const [token, settoken] = useState('')
     const [food_list, setfood_list] = useState([])
@@ -25,7 +25,7 @@ const StoreContextProvider = (props) => {
 
     const addTocart = async (itemid) => {
         if (token) {
-            await axios.post('http://localhost:3000/api/cart/add', { itemid }, { headers: { token } })
+            await axios.post(`${url}/api/cart/add`, { itemid }, { headers: { token } })
 
         }
 
@@ -40,7 +40,7 @@ const StoreContextProvider = (props) => {
         setitemcart((prev) => ({ ...prev, [itemid]: prev[itemid] - 1 }))
 
         if (token) {
-            await axios.post('http://localhost:3000/api/cart/remove', { itemid }, { headers: { token } })
+            await axios.post(`${url}/api/cart/remove`, { itemid }, { headers: { token } })
         }
 
     }
@@ -67,7 +67,7 @@ const StoreContextProvider = (props) => {
 
     const fooddata = async () => {
 
-        const responce = await axios.get('http://localhost:3000/api/food/foodlist')
+        const responce = await axios.get(`${url}/api/food/foodlist`)
 
 
         if (responce) {
@@ -79,11 +79,11 @@ const StoreContextProvider = (props) => {
 
     const cartdata = async (token) => {
 
-        let responce = await axios.get('http://localhost:3000/api/cart/data', { headers: { token } })
+        let responce = await axios.get(`${url}/api/cart/data`, { headers: { token } })
         setitemcart(responce.data.cartdata)
     }
     const contextvalue =
-        { food_list, itemcart, addTocart, removeitem, gettotalamount, token, settoken }
+        { food_list, itemcart, addTocart, removeitem, gettotalamount, token, settoken ,url}
 
     return (
         <StoreContext.Provider value={contextvalue}>

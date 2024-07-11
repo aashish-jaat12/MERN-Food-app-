@@ -4,14 +4,14 @@ import './Order.css'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useEffect } from 'react'
-import { assets } from '../../assets/assets'
+import { assets , url} from '../../assets/assets'
 
 function Order() {
   const [lists, setlist] = useState([])
 
   const allorder = async () => {
     try {
-      const responce = await axios.get('http://localhost:3000/api/order/list')
+      const responce = await axios.get(`${url}/api/order/list`)
       setlist(responce.data.list)
     } catch (error) {
       toast.error("server err...")
@@ -23,7 +23,7 @@ function Order() {
     
 
     try {
-      const responce = await axios.post('http://localhost:3000/api/order/status', { orderid, Status: e.target.value })
+      const responce = await axios.post(`${url}/api/order/status`, { orderid, Status: e.target.value })
       if (responce) {
         allorder()
         toast.success(responce.data.message)

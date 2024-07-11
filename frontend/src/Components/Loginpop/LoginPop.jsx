@@ -1,14 +1,14 @@
 import  { useContext, useState } from 'react'
 import './Loginpop.css'
 import axios from 'axios'
-import { toast } from 'react-toastify'
+
 import { assets}  from '../../assets/assets'
 import { StoreContext } from '../../Context/Storecontext'
 
 
 
 function LoginPop({ setLoginpap }) {
-const {  settoken} = useContext(StoreContext)
+const {  settoken, url} = useContext(StoreContext)
     const [current , setcurrent] = useState("Log-in")
 const  [name , setname]= useState("")
 const  [email , setemail]= useState("")
@@ -20,9 +20,9 @@ const onlogin = async(e)=>{
       let URL
     if(current === "Log-in"){
 
-        URL = "http://localhost:3000/api/user/login"
+        URL = `${url}/api/user/login`
     }else{
-        URL =  'http://localhost:3000/api/user/Registration'
+        URL =  `${url}/api/user/Registration`
     }
     
     const responce = await  axios.post(URL, {name:name ,email:email , password:password})
