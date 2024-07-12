@@ -33,17 +33,27 @@
 .dropdown li:hover{
 color: tomato;
 }
+.smscreen{
+    justify-content: center;
+    
+    margin: 5px 5vw 10PX 6vw;
 
-@media screen and (min-width: 700px) {
+}
+
+@media screen and (max-width: 900px) {
+    .sm {
+        display: none;
+    }
+    .sm1{display: none;}
+}
+@media screen and (min-width: 900px) {
     .profilr {
         cursor: pointer;
         position: relative;
         margin-top: 5px;
         border: none;
-        
-      
-       
-    }.dropdown li{
+        }
+        .dropdown li{
         margin: -3px;
     }
     .dropdown {
@@ -65,5 +75,8 @@ color: tomato;
     }
     .navmarg{
         margin: 0px  30px 0 25px;
+    }
+    .smscreen{
+        display: none;
     }
   }

@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 function Placeorder() {
   const {gettotalamount, token , food_list, itemcart, url} = useContext(StoreContext)
+const [pay , setpay] =useState('')
 
   const Navigate =useNavigate()
 
@@ -42,13 +43,16 @@ const orderdata ={
 
 
 const responce = await axios.post(`${url}/api/order/placeOrder`, orderdata , {headers: {token}})
-if(responce){
+if(responce && pay == "online"){
   const {session_url} = responce.data;
  
   window.location.replace(session_url)
+  setpay('')
 }
-else{
-  alert('error')
+else if(responce && pay == "cod"){
+  Navigate('/myorder')
+}else{
+  alert("errr....")
 }
 
 }
@@ -105,6 +109,11 @@ setdata (data=>({...data, [name]:value}))
             <b>Total</b>
             <b>${gettotalamount() >0 ? gettotalamount() + 2 : "0"}</b> 
             </div>
+                 <select required className='payment' onChange={(e)=>setpay(e.target.value)}>
+                  <option value="">Selact payment option</option>
+                  <option  value="online"> Pay with card</option>
+                  <option  value="cod"> Cash on delivery</option>
+                 </select>
            
             <button type='submit' >PROCEED TO PAYMENT</button>
       

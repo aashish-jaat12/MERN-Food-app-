@@ -5,6 +5,7 @@ import axios from 'axios'
 export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
+
 const url= "https://mern-food-app-backend-ho47.onrender.com"
     const [itemcart, setitemcart] = useState({})
     const [token, settoken] = useState('')
@@ -83,7 +84,7 @@ const url= "https://mern-food-app-backend-ho47.onrender.com"
         setitemcart(responce.data.cartdata)
     }
     const contextvalue =
-        { food_list, itemcart, addTocart, removeitem, gettotalamount, token, settoken ,url}
+        { food_list, itemcart, addTocart, removeitem, gettotalamount, token, settoken ,url, setfood_list ,fooddata}
 
     return (
         <StoreContext.Provider value={contextvalue}>
