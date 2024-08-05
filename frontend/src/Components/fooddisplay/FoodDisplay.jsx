@@ -14,7 +14,7 @@ function FoodDisplay({category}) {
 
            <div className="row m-0 row-cols-2 row-cols-md-4 g-3 ">
        {food_list.map((item,index)=>{ {
-          {if(category ==="All" || category === item.category || item.name == "Veg salad"){
+          {if(category ==="All" || category === item.category ){
             return( 
       
                 <Fooditem key={index} id={item._id} image={item.image}  description={item.description} price={item.price} name={item.name} />

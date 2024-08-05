@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer'
 import LoginPop from './Components/Loginpop/LoginPop'
 import Verify from './pages/Verifys/Verify';
 import Myorder from './pages/Myorder/Myorder';
+import Trackorder from './pages/Trackorder/Trackorder';
 
 function App() {
   const [loginpop , setLoginpap] = useState(false)
@@ -25,6 +26,7 @@ function App() {
         <Route path='/order' element={<Placeorder/>}></Route>
         <Route path='/verify' element={<Verify/>}></Route>
         <Route path='/myorder' element={<Myorder/>}></Route>
+        <Route path='/Trackorder' element={<Trackorder/>}></Route>
         
         
 

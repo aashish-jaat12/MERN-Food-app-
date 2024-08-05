@@ -1,0 +1,67 @@
+
+    .order-tracking {
+        width: 75%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+  
+  .order-status {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .order-status h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .order-status ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-statuss li {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .status-date,
+  .status-location,
+  .status-description {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .active{
+    color: goldenrod;
+    box-shadow: inset;
+    font-weight: 700;
+  }
+  .img{
+    display: flex;
+    width: 1.5rem;
+    padding: 3px;
+    /* display: none; */
+
+  }
+
+  @media (max-width: 850px) {
+    .order-statuss li {
+        flex-direction: column;
+       
+      }
+      .status-location{
+        margin-top: 10px;
+        text-align: left;
+      }
+  }
